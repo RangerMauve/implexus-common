@@ -1,7 +1,24 @@
 implexus-common
 ===============
 
-A bunch of common stream factories that one could use to get up and running with implexus.
+A bunch of common stream factories that one could use to get up and running with [implexus](https://www.npmjs.com/package/implexus).
+
+`npm install --save implexus-common`
+
+Example:
+--------
+
+```javascript
+var Implexus = require("implexus");
+var implexus = new Implexus();
+
+// Add all the stream types at once
+var streams = require("implexus-common");
+implexus.define(modules);
+
+var map = require("implexus-common/map");
+implexus.define("map", map);
+```
 
 API
 ---
