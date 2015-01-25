@@ -38,7 +38,7 @@ Outputs input to either the console, or stdout.
 
 ### example
 
-This shoudl output `Log:foo` to stdout.
+This should output `Log:foo` to stdout.
 
 ```dot
 digraph {
@@ -61,7 +61,7 @@ This should output the items to stdout one by one.
 
 ```dot
 digraph {
-   A[type=array, list="1,2,3,4,5"] -> B[type=stdout];
+	A[type=array, list="1,2,3,4,5"] -> B[type=stdout];
 }
 ```
 
@@ -235,9 +235,35 @@ digraph {
 `getProp`
 ---------
 
-TODO: Document this
+Takes in a stream of objects, outputs a certain property from within them.
+
+### properties
+
+-	`prop` : The property to fetch out. This is required in order to create the stream.
+
+### example
+
+```dot
+digraph {
+	A[type=getProp prop="foo.bar"];
+}
+```
 
 `makeProp`
 ----------
 
-TODO: Document this
+Takes in a stream of values and outputs objects with the value under a certain property
+
+### properties
+
+-	`prop` : What property to wrap inputted values under. This is required in order to create the stream.
+
+### example
+
+This will take in the value `foo`, and output the object `{bar:{baz:"foo"}}`.
+
+```dot
+digraph {
+	A[type=value value="foo"] -> B[type=makeProp prop="bar.baz"] -> C[type=stdout];
+}
+```
